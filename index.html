@@ -5,82 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aron's Investment</title>
     <style>
-        body {
-            font-family: Verdana, sans-serif;
-            margin: 0;
-            background: #f4f4f4;
-            color: #333;
+        body { 
+            font-family: Verdana, sans-serif; 
+            margin:0; 
+            background:#f4f4f4; 
+            color:#333; 
         }
-        header {
-            background: #0a3d62;
-            color: white;
-            padding: 20px;
-            text-align: center;
+        header { 
+            background:#0a3d62; 
+            color:white; 
+            padding:20px; 
+            text-align:center; 
         }
-        nav {
-            background: #006400;
-            padding: 12px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        nav { 
+            background:#006400; 
+            padding:12px; 
+            text-align:center; 
+            position:sticky; 
+            top:0; 
+            z-index:100; 
         }
-        nav button {
-            margin: 6px;
-            padding: 12px 16px;
-            border: none;
-            background: #ddd;
-            color: black;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
+        nav button { 
+            margin:6px; 
+            padding:12px 16px; 
+            border:none; 
+            background:#ddd; 
+            color:black; 
+            cursor:pointer; 
+            border-radius:5px; 
+            font-size:14px;
         }
-        nav button:hover {
-            background: #fff;
+        nav button:hover { background:#fff; }
+        section { 
+            display:none; 
+            padding:20px; 
+            max-width:950px; 
+            margin:0 auto; 
         }
-        section {
-            display: none;
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
+        .active { display:block; }
+        .card { 
+            background:white; 
+            padding:18px; 
+            margin:15px 0; 
+            border-radius:10px; 
+            box-shadow:0 2px 8px rgba(0,0,0,0.1); 
         }
-        .active {
-            display: block;
+        input, select, button { 
+            width:100%; 
+            padding:10px; 
+            margin:8px 0; 
+            border:1px solid #ccc; 
+            border-radius:5px; 
+            box-sizing:border-box; 
         }
-        .card {
-            background: white;
-            padding: 18px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        button.submit { 
+            background:#006400; 
+            color:white; 
+            font-weight:bold; 
+            cursor:pointer; 
         }
-        input, select, textarea, button {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button.submit {
-            background: #006400;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        button.submit:hover {
-            background: #008000;
-        }
-        .admin {
-            background: #222;
-            color: white;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        a {
-            color: #006400;
-        }
+        button.submit:hover { background:#008000; }
+        .admin { background:#222; color:white; }
+        ul { padding-left:20px; }
+        a { color:#006400; text-decoration:none; }
+        a:hover { text-decoration:underline; }
     </style>
 </head>
 <body>
@@ -98,7 +86,7 @@
         <button onclick="showSection('adminLogin')">Admin</button>
     </nav>
 
-    <!-- TRANSPORT SECTION -->
+    <!-- ==================== TRANSPORT SECTION ==================== -->
     <section id="transport" class="active">
         <h2>Transportation Services</h2>
         <p><i>We will be happy if you make your booking via our website.</i></p>
@@ -111,21 +99,21 @@
                 <li><a href="https://www.kilimanjaroexpress.co.tz" target="_blank">Kilimanjaro Express</a></li>
                 <li><a href="https://www.shabibyline.co.tz" target="_blank">Shabiby Line</a></li>
                 <li><a href="https://www.aboodbus.co.tz" target="_blank">Abood Bus</a></li>
-                <li><a href="https://www.newbestline.co.tz/" target="_blank">NBL - New Best Line</a></li>
-                <li><a href="https://nbsclassicbus.co.tz/" target="_blank">NBS Classic Bus</a></li>
+                <li><a href="https://www.newbestline.co.tz/" target="_blank">NBL / New Best Line (Online Booking)</a></li>
+                <li><a href="https://nbsclassicbus.co.tz/" target="_blank">NBS Classic (Book Ticket)</a></li>
                 <li><a href="https://www.mallessa.co.tz" target="_blank">Mallessa Buses</a></li>
                 <li><a href="https://shigaka.co.tz" target="_blank">Shigaka Buses</a></li>
                 <li><a href="https://bmcoach.co.tz" target="_blank">BM Coach</a></li>
                 <li><a href="https://www.saratoga.co.tz" target="_blank">Saratoga Buses</a></li>
                 <li><a href="https://www.anclassicbus.co.tz" target="_blank">AN Classic</a></li>
                 <li><a href="https://www.allysstar.co.tz/" target="_blank">Ally's Star</a></li>
-                <li><a href="https://kaiziregekemebos.co.tz/" target="_blank">KISBO / Kemebos</a></li>
+                <li><a href="https://kaiziregekemebos.co.tz/" target="_blank">KISBO / Kemebos (Book Bus)</a></li>
             </ul>
         </div>
 
         <div class="card">
             <h3>SGR (Standard Gauge Railway)</h3>
-            <p><i>Let's enjoy the new version of railway transportation in Tanzania.</i></p>
+            <p><i>Let's enjoy new version of railway transportation in Tanzania.</i></p>
             <a href="https://www.trc.co.tz" target="_blank">Book SGR Ticket →</a>
         </div>
 
@@ -141,7 +129,7 @@
 
         <div class="card">
             <h3>Marine Transport</h3>
-            <p><i>Have a wonderful travel on water.</i></p>
+            <p><i>Whale above water, have wonderful travel.</i></p>
             <ul>
                 <li><a href="https://www.azammarine.com" target="_blank">Azam Marine</a></li>
                 <li><a href="https://www.zanfastferries.com" target="_blank">Zan Fast Ferries</a></li>
@@ -149,11 +137,10 @@
         </div>
     </section>
 
-    <!-- TRANSACTIONS SECTION -->
+    <!-- ==================== TRANSACTIONS SECTION ==================== -->
     <section id="transaction">
         <h2>Transactions</h2>
         <p><i>Monetary services near you.</i></p>
-
         <div class="card">
             <h3>Mobile Money</h3>
             <ul>
@@ -163,7 +150,6 @@
                 <li><a href="https://halopesa.co.tz" target="_blank">HaloPesa</a></li>
             </ul>
         </div>
-
         <div class="card">
             <h3>Bank Apps</h3>
             <ul>
@@ -174,7 +160,7 @@
         </div>
     </section>
 
-    <!-- FOOD SECTION -->
+    <!-- ==================== FOOD SECTION ==================== -->
     <section id="food">
         <h2>Food Menu</h2>
         <div class="card">
@@ -190,7 +176,7 @@
         </div>
     </section>
 
-    <!-- PAYMENT SECTION -->
+    <!-- ==================== PAYMENT SECTION ==================== -->
     <section id="payment">
         <h2>Payment</h2>
         <div class="card">
@@ -205,7 +191,7 @@
         </div>
     </section>
 
-    <!-- ADMIN LOGIN -->
+    <!-- ==================== ADMIN LOGIN ==================== -->
     <section id="adminLogin">
         <h2>Admin Login</h2>
         <div class="card">
@@ -215,7 +201,7 @@
         </div>
     </section>
 
-    <!-- ADMIN PANEL -->
+    <!-- ==================== ADMIN PANEL (Only visible after login) ==================== -->
     <section id="adminPanel" class="admin">
         <h2>Admin Dashboard</h2>
         <div class="card">
@@ -224,17 +210,47 @@
         </div>
     </section>
 
-    <script>
-        // Simple JavaScript (without Firebase for now - it's easier to debug)
-        // You can add Firebase later once the basic version works
+    <script type="module">
+        // ================== FIREBASE CONFIG ==================
+        // REPLACE WITH YOUR OWN CONFIG FROM FIREBASE CONSOLE
+        const firebaseConfig = {
+            apiKey: "PASTE_YOUR_API_KEY_HERE",
+            authDomain: "your-project-id.firebaseapp.com",
+            projectId: "your-project-id",
+            storageBucket: "your-project-id.appspot.com",
+            messagingSenderId: "XXXXXXXXXX",
+            appId: "1:XXXXXXXXXX:web:XXXXXXXXXXXXXXXXXXXXXX"
+        };
 
-        function showSection(id) {
-            document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-            const section = document.getElementById(id);
-            if (section) section.classList.add("active");
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        let currentSessionId = Date.now().toString();
+
+        // Start visitor session
+        async function startSession() {
+            try {
+                await addDoc(collection(db, "visitors"), {
+                    sessionId: currentSessionId,
+                    enterTime: new Date().toISOString()
+                });
+            } catch (e) { console.log("Session tracking failed"); }
         }
+        startSession();
 
-        function goToPayment() {
+        // ================== SHOW SECTION ==================
+        window.showSection = function(id) {
+            document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+            document.getElementById(id).classList.add("active");
+
+            if (id === "payment") loadPayment();
+        };
+
+        // ================== FOOD TO PAYMENT ==================
+        window.goToPayment = function() {
             const foodSelect = document.getElementById("foodSelect");
             const price = foodSelect.value;
             const foodName = foodSelect.options[foodSelect.selectedIndex].text;
@@ -253,7 +269,7 @@
 
             showSection("payment");
             loadPayment();
-        }
+        };
 
         function loadPayment() {
             const data = JSON.parse(localStorage.getItem("currentOrder"));
@@ -262,39 +278,72 @@
                     <strong>Order Summary:</strong><br>
                     ${data.food}<br>
                     Price: ${data.price} Tsh<br>
-                    Address: ${data.address}
+                    Delivery Address: ${data.address}
                 `;
             }
         }
 
-        function confirmOrder() {
+        window.confirmOrder = async function() {
             const data = JSON.parse(localStorage.getItem("currentOrder"));
-            if (data) {
-                alert(`Order Confirmed!\n\nFood: ${data.food}\nPrice: ${data.price} Tsh\nAddress: ${data.address}`);
-                // Here you can later save to Firebase
+            if (!data) return;
+
+            try {
+                await addDoc(collection(db, "foodOrders"), {
+                    ...data,
+                    orderTime: new Date().toISOString(),
+                    status: "pending"
+                });
+                alert("✅ Order placed successfully! Thank you.");
                 localStorage.removeItem("currentOrder");
                 showSection("food");
+            } catch (e) {
+                alert("Failed to save order. Please try again.");
+                console.error(e);
             }
-        }
+        };
 
-        function loginAdmin() {
+        // ================== ADMIN LOGIN ==================
+        window.loginAdmin = function() {
             const user = document.getElementById("adminUser").value.trim();
             const pass = document.getElementById("adminPass").value.trim();
 
             if (user === "admin" && pass === "1234") {
                 showSection("adminPanel");
-                alert("Welcome Admin!");
-                // loadAdmin() can be added later when Firebase is connected
+                loadAdminOrders();
             } else {
-                alert("Wrong username or password!");
+                alert("❌ Wrong username or password!");
+            }
+        };
+
+        // Load all food orders for Admin
+        async function loadAdminOrders() {
+            const list = document.getElementById("adminFood");
+            list.innerHTML = "<li>Loading orders...</li>";
+
+            try {
+                const snapshot = await getDocs(collection(db, "foodOrders"));
+                list.innerHTML = "";
+
+                if (snapshot.empty) {
+                    list.innerHTML = "<li>No orders yet.</li>";
+                    return;
+                }
+
+                snapshot.forEach((doc) => {
+                    const d = doc.data();
+                    const time = new Date(d.orderTime).toLocaleString();
+                    list.innerHTML += `<li><strong>${d.food}</strong> - ${d.address} <br><small>${time}</small></li>`;
+                });
+            } catch (e) {
+                list.innerHTML = "<li>Error loading orders. Make sure Firestore rules allow read.</li>";
+                console.error(e);
             }
         }
 
-        // Show transport section by default when page loads
-        window.onload = function() {
+        // Show Transport section when page loads
+        window.onload = () => {
             showSection('transport');
         };
     </script>
-
 </body>
 </html>
