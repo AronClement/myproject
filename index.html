@@ -88,6 +88,8 @@ color:white;
 <button onclick="showSection('adminLogin')">Admin</button>
 </nav>
 
+<!-- TRANSPORT -->
+
 <section id="transport" class="active">
 
 <p><b>Transportation Services</b></p>
@@ -96,16 +98,67 @@ color:white;
 <div class="card">
 <h3>Bus Companies</h3>
 <ul>
-<li><a href="https://www.busbora.co.tz" target="_blank">Tahmeed / Tawakal / New Force / Tawakal / Adventure / City Boy</a></li>
-<li><a href="https://otapp.co.tz" target="_blank">Tahmeed / Tawakal / New Force / Tawakal / Adventure / City Boy</a></li>
+<li><a href="https://www.busbora.co.tz" target="_blank">Tahmeed / Tawakal / New Force / Tawakal / Adventure / City Boy (Link 1 You will be allocated bus company according to the date of your journey.)</a></li>
+<li><a href="https://otapp.co.tz" target="_blank">Tahmeed / Tawakal / New Force / Tawakal / Adventure / City Boy (Link 2 You will be allocated bus company according to the date of your journey.)</a></li>
+<br>
+<li><a href="https://www.kilimanjaroexpress.co.tz" target="_blank">Kilimanjaro Express</a></li>
+<br>
+<li><a href="https://www.shabibyline.co.tz" target="_blank">Shabiby Line</a></li>
+<br>
+<li><a href="https://www.aboodbus.co.tz" target="_blank">Abood Bus</a></li>
+<br>
+<li><a href="https://www.newbestline.co.tz/" target="_blank">NBL / New Best Line (Online Booking)</a></li>
+<br>
+<li><a href="https://nbsclassicbus.co.tz/" target="_blank">NBS Classic (Book Ticket)</a></li>
+<br>
+<li><a href="https://www.mallessa.co.tz" target="_blank">Mallessa Buses</a></li>
+<br>
+<li><a href="https://shigaka.co.tz" target="_blank">Shigaka Buses</a></li>
+<br>
+<li><a href="https://bmcoach.co.tz" target="_blank">BM Coach</a></li>
+<br>
+<li><a href="https://www.saratoga.co.tz" target="_blank">Saratoga Buses</a></li>
+<br>
+<li><a href="https://www.anclassicbus.co.tz" target="_blank">AN Classic</a></li>
+<br>
+<li><a href="https://www.allysstar.co.tz/" target="_blank">Ally's Star</a></li>
+<br>
+<li><a href="https://kaiziregekemebos.co.tz/" target="_blank">KISBO / Kemebos (Book Bus)</a></ul>
+</div>
+
+<div class="card">
+<h3>SGR</h3>
+<p><i>Let's enjoy new version of railway transportation in Tanzania.</i></p>
+<a href="https://www.trc.co.tz" target="_blank">Book SGR Ticket</a>
+</div>
+
+<div class="card">
+<h3>Airlines</h3>
+<p><i>Fly like a bird.</i></p>
+<ul>
+<li><a href="https://www.airtz.co.tz" target="_blank">Air Tanzania</a></li>
+<li><a href="https://www.precisionairtz.com" target="_blank">Precision Air</a></li>
+<li><a href="https://www.fastjet.com" target="_blank">FastJet</a></li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Marine Transport</h3>
+<p><i>Whale above water, have wonderful travel.</i></p>
+<ul>
+<li><a href="https://www.azammarine.com" target="_blank">Azam Marine</a></li>
+<li><a href="https://www.zanfastferries.com" target="_blank">Zan Fast Ferries</a></li>
 </ul>
 </div>
 
 </section>
 
+<!-- TRANSACTIONS -->
+
 <section id="transaction">
 
 <h2>Transactions</h2>
+<p><i>Monetary services near you.</i></p>
 
 <div class="card">
 <h3>Mobile Money</h3>
@@ -117,7 +170,18 @@ color:white;
 </ul>
 </div>
 
+<div class="card">
+<h3>Bank Apps</h3>
+<ul>
+<li><a href="#">NMB Mobile</a></li>
+<li><a href="#">CRDB App</a></li>
+<li><a href="#">Absa App</a></li>
+</ul>
+</div>
+
 </section>
+
+<!-- FOOD -->
 
 <section id="food">
 
@@ -141,6 +205,8 @@ color:white;
 
 </section>
 
+<!-- PAYMENT -->
+
 <section id="payment">
 
 <h2>Payment</h2>
@@ -148,6 +214,8 @@ color:white;
 <div class="card">
 
 <p id="orderSummary"></p>
+
+<h3>Pay with:</h3>
 
 <ul>
 <li><a href="https://www.vodacom.co.tz/m-pesa" target="_blank">M-Pesa</a></li>
@@ -161,6 +229,8 @@ color:white;
 
 </section>
 
+<!-- ADMIN LOGIN -->
+
 <section id="adminLogin">
 
 <h2>Admin Login</h2>
@@ -172,6 +242,8 @@ color:white;
 
 </section>
 
+<!-- ADMIN PANEL -->
+
 <section id="adminPanel" class="admin">
 
 <h2>Admin Dashboard</h2>
@@ -179,46 +251,12 @@ color:white;
 <h3>Food Orders</h3>
 <ul id="adminFood"></ul>
 
-<h3>Website Visitors</h3>
-<ul id="adminVisitors"></ul>
-
 </section>
 
 <script type="module">
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import {
-getFirestore,
-collection,
-addDoc,
-getDocs
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const firebaseConfig = {
-apiKey:"PASTE",
-authDomain:"PASTE",
-projectId:"PASTE",
-appId:"PASTE"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-let sessionId = Date.now().toString();
-
-async function startSession(){
-
-await addDoc(collection(db,"visitors"),{
-sessionId:sessionId,
-enterTime:new Date().toISOString(),
-actions:[]
-});
-
-}
-
-startSession();
+<h3>Website Visitors</h3>
+<ul id="adminVisitors"></ul>
 
 async function loadVisitors(){
 
@@ -233,6 +271,43 @@ list.innerHTML+=`<li>Session: ${d.sessionId} | Enter: ${d.enterTime}</li>`;
 });
 
 }
+loadVisitors();
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+collection,
+addDoc,
+getDocs
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* WEKA FIREBASE CONFIG YAKO */
+const firebaseConfig = {
+apiKey:"PASTE",
+authDomain:"PASTE",
+projectId:"PASTE",
+appId:"PASTE"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+let sessionId = Date.now().toString();
+
+async function startSession(){
+
+await addDoc(collection(db,"visitors"),{
+sessionId:sessionId,
+enterTime:new Date().toISOString(),
+actions:[]
+});
+
+}
+
+startSession();
+
+/* NAVIGATION */
 
 window.showSection = async function(id){
 
@@ -247,6 +322,8 @@ time:new Date().toISOString()
 
 if(id==="payment") loadPayment();
 }
+
+/* FOOD FLOW */
 
 window.goToPayment = function(){
 
@@ -292,6 +369,8 @@ alert("Order placed successfully!");
 showSection("food");
 }
 
+/* ADMIN */
+
 window.loginAdmin=function(){
 
 let user=document.getElementById("adminUser").value;
@@ -300,7 +379,6 @@ let pass=document.getElementById("adminPass").value;
 if(user==="admin" && pass==="1234"){
 showSection("adminPanel");
 loadAdmin();
-loadVisitors();
 }else{
 alert("Wrong login");
 }
@@ -332,4 +410,4 @@ exitTime:new Date().toISOString()
 </script>
 
 </body>
-</html>
+</html>... hii code nataka sasa iwe active, admin aone sehemu yake na user wafanye action zao
