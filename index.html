@@ -255,6 +255,24 @@ color:white;
 
 <script type="module">
 
+<h3>Website Visitors</h3>
+<ul id="adminVisitors"></ul>
+
+async function loadVisitors(){
+
+let list=document.getElementById("adminVisitors");
+list.innerHTML="";
+
+const logs=await getDocs(collection(db,"visitors"));
+
+logs.forEach(doc=>{
+let d=doc.data();
+list.innerHTML+=`<li>Session: ${d.sessionId} | Enter: ${d.enterTime}</li>`;
+});
+
+}
+loadVisitors();
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
@@ -275,12 +293,32 @@ appId:"PASTE"
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+let sessionId = Date.now().toString();
+
+async function startSession(){
+
+await addDoc(collection(db,"visitors"),{
+sessionId:sessionId,
+enterTime:new Date().toISOString(),
+actions:[]
+});
+
+}
+
+startSession();
 
 /* NAVIGATION */
 
-window.showSection = function(id){
+window.showSection = async function(id){
+
 document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
 document.getElementById(id).classList.add("active");
+
+await addDoc(collection(db,"visitorActions"),{
+sessionId:sessionId,
+action:"Visited "+id,
+time:new Date().toISOString()
+});
 
 if(id==="payment") loadPayment();
 }
@@ -320,6 +358,12 @@ let data = JSON.parse(localStorage.getItem("order"));
 
 await addDoc(collection(db,"foodOrders"),data);
 
+await addDoc(collection(db,"visitorActions"),{
+sessionId:sessionId,
+action:"Ordered "+data.food,
+time:new Date().toISOString()
+});
+
 alert("Order placed successfully!");
 
 showSection("food");
@@ -353,6 +397,15 @@ fd.innerHTML+=`<li>${d.food} - ${d.address}</li>`;
 });
 
 }
+
+window.addEventListener("beforeunload", async function(){
+
+await addDoc(collection(db,"visitorExit"),{
+sessionId:sessionId,
+exitTime:new Date().toISOString()
+});
+
+});
 
 </script>
 
