@@ -33,7 +33,6 @@
             color:black; 
             cursor:pointer; 
             border-radius:5px; 
-            font-size:14px;
         }
         nav button:hover { background:#fff; }
         section { 
@@ -67,8 +66,7 @@
         button.submit:hover { background:#008000; }
         .admin { background:#222; color:white; }
         ul { padding-left:20px; }
-        a { color:#006400; text-decoration:none; }
-        a:hover { text-decoration:underline; }
+        a { color:#006400; }
     </style>
 </head>
 <body>
@@ -86,7 +84,7 @@
         <button onclick="showSection('adminLogin')">Admin</button>
     </nav>
 
-    <!-- ==================== TRANSPORT SECTION ==================== -->
+    <!-- TRANSPORT -->
     <section id="transport" class="active">
         <h2>Transportation Services</h2>
         <p><i>We will be happy if you make your booking via our website.</i></p>
@@ -99,27 +97,26 @@
                 <li><a href="https://www.kilimanjaroexpress.co.tz" target="_blank">Kilimanjaro Express</a></li>
                 <li><a href="https://www.shabibyline.co.tz" target="_blank">Shabiby Line</a></li>
                 <li><a href="https://www.aboodbus.co.tz" target="_blank">Abood Bus</a></li>
-                <li><a href="https://www.newbestline.co.tz/" target="_blank">NBL / New Best Line (Online Booking)</a></li>
-                <li><a href="https://nbsclassicbus.co.tz/" target="_blank">NBS Classic (Book Ticket)</a></li>
+                <li><a href="https://www.newbestline.co.tz/" target="_blank">NBL / New Best Line</a></li>
+                <li><a href="https://nbsclassicbus.co.tz/" target="_blank">NBS Classic</a></li>
                 <li><a href="https://www.mallessa.co.tz" target="_blank">Mallessa Buses</a></li>
                 <li><a href="https://shigaka.co.tz" target="_blank">Shigaka Buses</a></li>
                 <li><a href="https://bmcoach.co.tz" target="_blank">BM Coach</a></li>
                 <li><a href="https://www.saratoga.co.tz" target="_blank">Saratoga Buses</a></li>
                 <li><a href="https://www.anclassicbus.co.tz" target="_blank">AN Classic</a></li>
                 <li><a href="https://www.allysstar.co.tz/" target="_blank">Ally's Star</a></li>
-                <li><a href="https://kaiziregekemebos.co.tz/" target="_blank">KISBO / Kemebos (Book Bus)</a></li>
+                <li><a href="https://kaiziregekemebos.co.tz/" target="_blank">KISBO / Kemebos</a></li>
             </ul>
         </div>
 
         <div class="card">
-            <h3>SGR (Standard Gauge Railway)</h3>
+            <h3>SGR</h3>
             <p><i>Let's enjoy new version of railway transportation in Tanzania.</i></p>
-            <a href="https://www.trc.co.tz" target="_blank">Book SGR Ticket →</a>
+            <a href="https://www.trc.co.tz" target="_blank">Book SGR Ticket</a>
         </div>
 
         <div class="card">
             <h3>Airlines</h3>
-            <p><i>Fly like a bird.</i></p>
             <ul>
                 <li><a href="https://www.airtz.co.tz" target="_blank">Air Tanzania</a></li>
                 <li><a href="https://www.precisionairtz.com" target="_blank">Precision Air</a></li>
@@ -129,7 +126,6 @@
 
         <div class="card">
             <h3>Marine Transport</h3>
-            <p><i>Whale above water, have wonderful travel.</i></p>
             <ul>
                 <li><a href="https://www.azammarine.com" target="_blank">Azam Marine</a></li>
                 <li><a href="https://www.zanfastferries.com" target="_blank">Zan Fast Ferries</a></li>
@@ -137,7 +133,7 @@
         </div>
     </section>
 
-    <!-- ==================== TRANSACTIONS SECTION ==================== -->
+    <!-- TRANSACTIONS -->
     <section id="transaction">
         <h2>Transactions</h2>
         <p><i>Monetary services near you.</i></p>
@@ -150,17 +146,9 @@
                 <li><a href="https://halopesa.co.tz" target="_blank">HaloPesa</a></li>
             </ul>
         </div>
-        <div class="card">
-            <h3>Bank Apps</h3>
-            <ul>
-                <li><a href="#">NMB Mobile</a></li>
-                <li><a href="#">CRDB App</a></li>
-                <li><a href="#">Absa App</a></li>
-            </ul>
-        </div>
     </section>
 
-    <!-- ==================== FOOD SECTION ==================== -->
+    <!-- FOOD -->
     <section id="food">
         <h2>Food Menu</h2>
         <div class="card">
@@ -176,12 +164,12 @@
         </div>
     </section>
 
-    <!-- ==================== PAYMENT SECTION ==================== -->
+    <!-- PAYMENT -->
     <section id="payment">
         <h2>Payment</h2>
         <div class="card">
             <p id="orderSummary"><strong>Order Summary</strong></p>
-            <h3>Pay with Mobile Money:</h3>
+            <h3>Pay with:</h3>
             <ul>
                 <li><a href="https://www.vodacom.co.tz/m-pesa" target="_blank">M-Pesa</a></li>
                 <li><a href="https://www.tigo.co.tz/tigo-pesa" target="_blank">Tigo Pesa</a></li>
@@ -191,7 +179,7 @@
         </div>
     </section>
 
-    <!-- ==================== ADMIN LOGIN ==================== -->
+    <!-- ADMIN LOGIN -->
     <section id="adminLogin">
         <h2>Admin Login</h2>
         <div class="card">
@@ -201,7 +189,7 @@
         </div>
     </section>
 
-    <!-- ==================== ADMIN PANEL (Only visible after login) ==================== -->
+    <!-- ADMIN PANEL -->
     <section id="adminPanel" class="admin">
         <h2>Admin Dashboard</h2>
         <div class="card">
@@ -211,15 +199,15 @@
     </section>
 
     <script type="module">
-        // ================== FIREBASE CONFIG ==================
-        // REPLACE WITH YOUR OWN CONFIG FROM FIREBASE CONSOLE
+        // ================== YOUR FIREBASE CONFIG ==================
         const firebaseConfig = {
-            apiKey: "PASTE_YOUR_API_KEY_HERE",
-            authDomain: "your-project-id.firebaseapp.com",
-            projectId: "your-project-id",
-            storageBucket: "your-project-id.appspot.com",
-            messagingSenderId: "XXXXXXXXXX",
-            appId: "1:XXXXXXXXXX:web:XXXXXXXXXXXXXXXXXXXXXX"
+          apiKey: "AIzaSyBUPdOOgzJjeFpoA1fBqw4qz0MLjCTpmPM",
+          authDomain: "myproject-2d168.firebaseapp.com",
+          projectId: "myproject-2d168",
+          storageBucket: "myproject-2d168.firebasestorage.app",
+          messagingSenderId: "436132971267",
+          appId: "1:436132971267:web:3e0606eb6407625e0d9f36",
+          measurementId: "G-5EV9DPBPZ3"
         };
 
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
@@ -230,43 +218,37 @@
 
         let currentSessionId = Date.now().toString();
 
-        // Start visitor session
+        // Start session
         async function startSession() {
             try {
                 await addDoc(collection(db, "visitors"), {
                     sessionId: currentSessionId,
                     enterTime: new Date().toISOString()
                 });
-            } catch (e) { console.log("Session tracking failed"); }
+            } catch(e) {}
         }
         startSession();
 
-        // ================== SHOW SECTION ==================
+        // Show Section
         window.showSection = function(id) {
             document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
             document.getElementById(id).classList.add("active");
-
             if (id === "payment") loadPayment();
         };
 
-        // ================== FOOD TO PAYMENT ==================
+        // Food to Payment
         window.goToPayment = function() {
-            const foodSelect = document.getElementById("foodSelect");
-            const price = foodSelect.value;
-            const foodName = foodSelect.options[foodSelect.selectedIndex].text;
+            const select = document.getElementById("foodSelect");
+            const price = select.value;
+            const foodName = select.options[select.selectedIndex].text;
             const address = document.getElementById("address").value.trim();
 
             if (!address) {
-                alert("Please enter your delivery address!");
+                alert("Tafadhali ingiza anwani ya delivery!");
                 return;
             }
 
-            localStorage.setItem("currentOrder", JSON.stringify({
-                food: foodName,
-                price: price,
-                address: address
-            }));
-
+            localStorage.setItem("currentOrder", JSON.stringify({food: foodName, price: price, address: address}));
             showSection("payment");
             loadPayment();
         };
@@ -277,8 +259,8 @@
                 document.getElementById("orderSummary").innerHTML = `
                     <strong>Order Summary:</strong><br>
                     ${data.food}<br>
-                    Price: ${data.price} Tsh<br>
-                    Delivery Address: ${data.address}
+                    Bei: ${data.price} Tsh<br>
+                    Anwani: ${data.address}
                 `;
             }
         }
@@ -293,16 +275,15 @@
                     orderTime: new Date().toISOString(),
                     status: "pending"
                 });
-                alert("✅ Order placed successfully! Thank you.");
+                alert("✅ Order imesajiliwa vizuri! Asante.");
                 localStorage.removeItem("currentOrder");
                 showSection("food");
             } catch (e) {
-                alert("Failed to save order. Please try again.");
-                console.error(e);
+                alert("Kuna tatizo. Jaribu tena.");
             }
         };
 
-        // ================== ADMIN LOGIN ==================
+        // Admin Login
         window.loginAdmin = function() {
             const user = document.getElementById("adminUser").value.trim();
             const pass = document.getElementById("adminPass").value.trim();
@@ -311,39 +292,35 @@
                 showSection("adminPanel");
                 loadAdminOrders();
             } else {
-                alert("❌ Wrong username or password!");
+                alert("Username au Password si sahihi!");
             }
         };
 
-        // Load all food orders for Admin
         async function loadAdminOrders() {
             const list = document.getElementById("adminFood");
-            list.innerHTML = "<li>Loading orders...</li>";
+            list.innerHTML = "Inapakia...";
 
             try {
                 const snapshot = await getDocs(collection(db, "foodOrders"));
                 list.innerHTML = "";
 
                 if (snapshot.empty) {
-                    list.innerHTML = "<li>No orders yet.</li>";
+                    list.innerHTML = "<li>Hakuna orders bado.</li>";
                     return;
                 }
 
-                snapshot.forEach((doc) => {
+                snapshot.forEach(doc => {
                     const d = doc.data();
                     const time = new Date(d.orderTime).toLocaleString();
-                    list.innerHTML += `<li><strong>${d.food}</strong> - ${d.address} <br><small>${time}</small></li>`;
+                    list.innerHTML += `<li><strong>${d.food}</strong> - ${d.address}<br><small>${time}</small></li>`;
                 });
             } catch (e) {
-                list.innerHTML = "<li>Error loading orders. Make sure Firestore rules allow read.</li>";
-                console.error(e);
+                list.innerHTML = "<li>Tatizo la kupakia orders.</li>";
             }
         }
 
-        // Show Transport section when page loads
-        window.onload = () => {
-            showSection('transport');
-        };
+        // Load transport section by default
+        window.onload = () => showSection('transport');
     </script>
 </body>
 </html>
